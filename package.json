@@ -1,8 +1,11 @@
 {
   "name": "storybooks",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "homepage": "https://github.com/waqarshakeel29/MyStorybook#readme",
+  "author": "Waqar Shakeel (waqarshakeel29)",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
