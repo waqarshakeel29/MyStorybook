@@ -2,6 +2,13 @@
 @import '../../styles/utils/_colors.scss';
 
 
+.text-field {
+    display: flex;
+    flex-direction: column;
+    gap: $spacer-4;
+}
+
+
 .text-field__input {
     border-radius: 2px;
     background-color: white;

@@ -1,9 +1,12 @@
 import classNames from "classnames";
 import styles from "./TextField.module.scss";
 import { ChangeEvent, InputHTMLAttributes } from "react";
+import { Label } from "../Label/Label";
+
+type Size = "small" | "medium";
 
 type TextFieldProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> & {
-  size?: "small" | "medium";
+  size?: Size;
   label?: string;
   onChange?: (
     e: ChangeEvent,
@@ -21,6 +24,7 @@ type TextFieldProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> & {
  * Primary UI component for user interaction
  */
 export const TextField = ({
+  id = "",
   size = "small",
   type = "text",
   placeholder = "Text",
@@ -28,24 +32,30 @@ export const TextField = ({
   invalid = false,
   label,
   className,
+
   onChange,
   ...props
 }: TextFieldProps) => {
-  const inputClass = classNames(
-    className,
-    styles["text-field__input"],
-    // styles[`storybook-button--${variant}`],
-    { [styles[`text-field__input--${size}`]]: size },
-    { [styles[`text-field__input--invalid`]]: invalid },
-    { [styles[`text-field__input--disabled`]]: disabled }
-  );
+  const containerClass = classNames(styles["text-field"], className);
+  const inputClass = classNames(styles["text-field__input"], {
+    [styles[`text-field__input--${size}`]]: size,
+    [styles[`text-field__input--invalid`]]: invalid,
+    [styles[`text-field__input--disabled`]]: disabled,
+  });
 
   return (
-    <input
-      className={inputClass}
-      placeholder={placeholder}
-      disabled={disabled}
-      {...props}
-    />
+    <div className={containerClass}>
+      {label && (
+        <Label htmlFor={id} size={size}>
+          {label}
+        </Label>
+      )}
+      <input
+        className={inputClass}
+        placeholder={placeholder}
+        disabled={disabled}
+        {...props}
+      />
+    </div>
   );
 };

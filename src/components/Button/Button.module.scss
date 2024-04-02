@@ -65,19 +65,19 @@
   }
 
   &--small {
-    font-size: $text-small;
+    font-size: $body-xs;
     height: 28px;
     width: 70px;
   }
 
   &--medium {
-    font-size: $text-medium;
+    font-size: $body-s;
     height: 40px;
     width: 109px;
   }
 
   &--large {
-    font-size: $text-large;
+    font-size: $body-m;
     height: 48px;
     width: 163px;
   }
