@@ -1,0 +1,84 @@
+@import '../../styles/utils/_variables.scss';
+@import '../../styles/utils/_colors.scss';
+
+.storybook-button {
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+
+  &--primary {
+    border: 0;
+    color: white;
+    background-color: $lavender-indigo;
+
+    &:hover {
+      background-color: $rich-lilac;
+    }
+
+    &:active {
+      background-color: $grape;
+    }
+
+    &:disabled {
+      background-color: $light-gray;
+    }
+  }
+
+  &--secondary {
+    color: $lavender-indigo;
+    border: 1px solid $lavender-indigo;
+    background-color: transparent;
+
+    &:hover {
+      color: $rich-lilac;
+      border: 1px solid $rich-lilac;
+    }
+
+    &:active {
+      color: $grape;
+      border: 1px solid $grape;
+    }
+
+    &:disabled {
+      color: $light-gray;
+      border: 1px solid $light-gray;
+    }
+  }
+
+  &--text {
+    border: 0;
+    color: $lavender-indigo;
+    background-color: transparent;
+
+    &:hover {
+      color: $rich-lilac;
+    }
+
+    &:active {
+      color: $grape;
+    }
+
+    &:disabled {
+      color: $light-gray;
+    }
+  }
+
+  &--small {
+    font-size: $text-small;
+    height: 28px;
+    width: 70px;
+  }
+
+  &--medium {
+    font-size: $text-medium;
+    height: 40px;
+    width: 109px;
+  }
+
+  &--large {
+    font-size: $text-large;
+    height: 48px;
+    width: 163px;
+  }
+}
