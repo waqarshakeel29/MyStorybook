@@ -2,6 +2,7 @@
 @import '../../styles/utils/_colors.scss';
 
 .storybook-button {
+  font-family: $main-font-regular;
   border-radius: 4px;
   cursor: pointer;
   display: inline-block;

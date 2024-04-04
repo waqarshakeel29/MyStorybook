@@ -1,13 +1,17 @@
 @import 'utils/variables';
 @import 'utils/colors';
 
+@import 'base/_fonts';
+@import 'base/reset';
+
 
 @import 'layout/forms';
 
 
 html,
 body {
-    font-size: 14px;
+    font-family: $main-font-regular;
+    font-size: $body-xs;
     height: 100%;
     width: 100%;
 }
