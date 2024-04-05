@@ -74,6 +74,7 @@ export const TextArea = React.forwardRef(
           cols={cols}
           maxLength={maxLength}
           value={value}
+          onChange={onChange}
           {...props}
         />
       </div>

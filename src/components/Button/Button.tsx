@@ -47,6 +47,7 @@ export const Button = ({
   return (
     <button
       className={buttonStyles}
+      onClick={onClick}
       {...props}
     >
       {label}

@@ -26,13 +26,11 @@ type TextFieldProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> & {
 export const TextField = ({
   id = "",
   size = "small",
-  type = "text",
   placeholder = "Text",
   disabled = false,
   invalid = false,
   label,
   className,
-
   onChange,
   ...props
 }: TextFieldProps) => {
@@ -54,6 +52,7 @@ export const TextField = ({
         className={inputClass}
         placeholder={placeholder}
         disabled={disabled}
+        onChange={onChange}
         {...props}
       />
     </div>
