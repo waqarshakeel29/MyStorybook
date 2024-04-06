@@ -1,0 +1,25 @@
+@import '../../../styles/utils/_variables.scss';
+@import '../../../styles/utils/_colors.scss';
+
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: $spacer-8;
+}
+
+.header-label {
+    font-size: $body-s;
+}
+
+.header-icon {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    padding: 2px;
+    cursor: pointer;
+}
