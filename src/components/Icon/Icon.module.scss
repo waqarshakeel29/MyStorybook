@@ -1,0 +1,18 @@
+.icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.icon-clickable {
+    cursor: pointer;
+}
+
+.sm > * {
+    height: 10px;
+    width: 10px;
+}
+
+.md > * {
+    height: 12px;
+    width: 12px;
+}

@@ -1,11 +1,7 @@
 import { FC, ReactNode, useEffect } from "react";
 import Draggable from "react-draggable";
 import classNames from "classnames";
-import {
-  DEFAULT_TOP,
-  DRAGGABLE_CANCEL_CLASS,
-  DRAGGABLE_HANDLE_CLASS,
-} from "./constants";
+import { DEFAULT_TOP } from "./constants";
 import styles from "./Container.module.scss";
 
 type Position =
@@ -27,14 +23,12 @@ type Position =
 type Size = "sm" | "md" | "lg" | "custom";
 interface ContainerProps {
   position?: Position;
-  closePopup: (event: string) => void;
+  closePopup: (event: any) => void;
   openPopupCb?: () => void;
   closePopupCb?: () => void;
   className?: string;
   wrapperClassName?: string;
   children?: ReactNode;
-  enableKeyDownListener?: boolean;
-  onClickOutside?: () => void;
   isDraggable?: boolean;
   fixedCenter?: boolean;
   isOnClickStopPropagation?: boolean;
@@ -48,22 +42,12 @@ const Container: FC<ContainerProps> = ({
   openPopupCb = () => {},
   className = "",
   closePopupCb = () => {},
-  enableKeyDownListener = true,
   isDraggable = true,
   fixedCenter = false,
   size = "custom",
   closePopup,
   children,
-  onClickOutside,
 }) => {
-  useEffect(() => {
-    calcPosition();
-    openPopupCb();
-    return () => {
-      closePopupCb();
-    };
-  }, []);
-
   const calcPosition = () => {
     const notApplyIn = [
       "fixed",
@@ -101,6 +85,13 @@ const Container: FC<ContainerProps> = ({
       container.style.left = "initial";
     }
   };
+  useEffect(() => {
+    calcPosition();
+    openPopupCb();
+    return () => {
+      closePopupCb();
+    };
+  }, []);
 
   const handleClickOutside = (event: any) => {
     const callback = closePopup;
@@ -152,9 +143,6 @@ const Container: FC<ContainerProps> = ({
       <Draggable
         onMouseDown={(e) => e.stopPropagation()}
         disabled={!isDraggable}
-        // bounds="parent"
-        // handle={`${DRAGGABLE_HANDLE_CLASS}`}
-        // cancel={`${DRAGGABLE_CANCEL_CLASS}`}
       >
         {container}
       </Draggable>
@@ -173,22 +161,3 @@ const Container: FC<ContainerProps> = ({
 };
 
 export default Container;
-
-// const ContainerClickOutside = clickOutside(Container);
-
-// const ContainerWrapper = ({ disableHOCOnClickOutside, ...props }) => (
-//   <ContainerClickOutside
-//     {...props}
-//     disableOnClickOutside={disableHOCOnClickOutside}
-//   />
-// );
-
-// ContainerWrapper.propTypes = {
-//   disableHOCOnClickOutside: boolean,
-// };
-
-// ContainerWrapper.defaultProps = {
-//   disableHOCOnClickOutside: false,
-// };
-
-// export default ContainerWrapper;

@@ -1,25 +1,23 @@
-/* eslint react/jsx-filename-extension: 0 */
 import { FC, useState } from "react";
 import { Body, Container, Footer, Header } from "../../components/Popup";
 import { Button } from "../../components/Button/Button";
 import styles from "./storyStyles.module.scss";
 
-const AlertsPopupExample: FC<any> = ({
+interface AlertsPopupExampleProps {
+  closePopup: () => void;
+}
+
+const AlertsPopupExample: FC<AlertsPopupExampleProps> = ({
   closePopup,
-  anyPopupOpened,
-  onAlertsOpened,
-  onAlertsClosed,
 }) => {
-  const onClosePopup = () => !anyPopupOpened && closePopup();
+  const onClosePopup = () => closePopup();
 
   return (
     <Container
       closePopup={onClosePopup}
       position={"center"}
-      enableKeyDownListener
-      openPopupCb={onAlertsOpened}
-      closePopupCb={onAlertsClosed}
-      isDraggable
+      openPopupCb={()=>{}}
+      closePopupCb={()=>{}}
     >
       <Header title="Alerts" onClosePopup={closePopup} />
       <Body>
@@ -39,10 +37,7 @@ const ControlledPopUp = () => {
         <div className={styles.item}>
           <Button label="show popup" onClick={() => togglePopup(!isOpen)} />
           {isOpen && (
-            <AlertsPopupExample
-              closePopup={() => togglePopup(false)}
-              autoFocus
-            />
+            <AlertsPopupExample closePopup={() => togglePopup(false)} />
           )}
         </div>
       </div>
