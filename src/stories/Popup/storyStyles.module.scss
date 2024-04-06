@@ -1,0 +1,34 @@
+.container {
+    background-color: white;
+  }
+  
+  .row {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin-bottom: 10px;
+    h3 {
+    }
+  }
+  
+  .item {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .popupContent {
+    width: 400px;
+    padding: 12px;
+  }
+  
+  .containerWrapper {
+    width: 100%;
+    background: #40739e;
+  }
+  
+  .alertButtonContainer {
+    margin: 0 10px 0 0;
+    position: relative;
+  }
+  
