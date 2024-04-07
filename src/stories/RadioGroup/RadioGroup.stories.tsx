@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta } from "@storybook/react";
 import "../../styles/main.scss";
 import RadioGroup from "../../components/RadioGroup/RadioGroup";
 import ControlledRadioGroup from "./ControlledRadioGroup";
@@ -56,8 +56,7 @@ export const Column = {
 
 
 export const Controlled = {
-  args: {},
-  render: (_: any) => {
+  render: () => {
     return <ControlledRadioGroup />;
   },
 };
