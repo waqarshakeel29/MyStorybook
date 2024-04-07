@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import cx from "classnames";
 import styles from "./Label.module.scss";
 import { ReactNode } from "react";
 
@@ -21,11 +21,9 @@ export const Label = ({
   className = "",
   ...props
 }: LabelProps) => {
-  const labelClass = classNames(
-    className,
-    styles["label"],
-    { [styles[`label--${size}`]]: size }
-  );
+  const labelClass = cx(className, styles["label"], {
+    [styles[`label--${size}`]]: size,
+  });
 
   return (
     <label htmlFor={htmlFor} className={labelClass} {...props}>

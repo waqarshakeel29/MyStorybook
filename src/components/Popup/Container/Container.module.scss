@@ -1,0 +1,114 @@
+// @import "../../../CurrentApp/AppContent/variables.scss";
+$sidebar-width: 290px;
+
+// @import "../../../CurrentApp/AppContent/TabsBar/component/variables.scss";
+$tabs-bar-height: 3rem;
+
+// @import "../../../CurrentApp/AppContent/LeftPanel/FilterPanel/component/variables.scss";
+$margin-left: 5px;
+
+$popup-header-height: 28px;
+$popup-footer-height: 44px;
+
+.noScrollbar {
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // IE10 CSS Hack: Needed to make anything behind not hoverable
+  background: rgba(26, 20, 31, 0.7);
+
+  &.center {
+    z-index: 5;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    position: fixed;
+  }
+}
+
+.wrapper .container {
+  position: relative;
+  margin-left: 0;
+  left: auto;
+}
+
+.container {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  background-color: gray;
+  position: fixed;
+  z-index: 5;
+  order: 1;
+
+  /**
+ * @todo We should do further investigation on this position classes. (Note by Franco Cuarterolo)
+ */
+
+  &.toRight {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-left: 0;
+  }
+
+  &.relativeBottom {
+    position: absolute;
+    left: inherit;
+  }
+
+  &.nextButton {
+    position: absolute;
+    left: inherit;
+  }
+
+  &.bottomCentered {
+    position: absolute;
+    left: -13em; // FIXME: This is fixed to center medium size containers. Only used in HelpPopup.
+    top: 4.16em;
+
+    &::after {
+      display: block;
+    }
+  }
+
+  &.fixed {
+    // top: calc(var(--header-height, 4.5rem) + #{$tabs-bar-height});
+    margin-top: 5px;
+  }
+
+  &.bottom {
+    bottom: 0.5rem;
+  }
+
+  &.upper {
+    margin-bottom: 1.8em;
+    margin-left: 0;
+    left: inherit;
+  }
+
+  &::after {
+    display: none;
+    content: '';
+    position: absolute;
+    top: -(10px * 2);
+    left: 50%;
+    margin-left: -10px;
+    border: 10px solid transparent;
+    border-bottom-color: inherit;
+  }
+}
+
+.appInformation {
+  border: solid 3px gray;
+  border-radius: 3px;
+  padding: 1em;
+}

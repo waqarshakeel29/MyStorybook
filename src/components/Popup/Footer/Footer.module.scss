@@ -1,0 +1,12 @@
+@import '../../../styles/utils/_variables.scss';
+@import '../../../styles/utils/_colors.scss';
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: $spacer-8;
+    background-color: white;
+    gap: $spacer-12;
+}
