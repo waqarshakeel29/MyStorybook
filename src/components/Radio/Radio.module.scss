@@ -1,0 +1,82 @@
+@import '../../styles/utils/_variables.scss';
+@import '../../styles/utils/_colors.scss';
+
+$smWidth: 20px;
+$mdWidth: 24px;
+$iconLabelGap: $spacer-4;
+$hoverShadowWidth: 4px;
+$focusShadowWidth: 2px;
+
+// Common
+.radio {
+  gap: $spacer-2;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  &__input {
+    gap: $iconLabelGap;
+    display: flex;
+    align-items: center;
+  }
+
+  &__label {
+    color: $midnight;
+
+    &--sm {
+      font-size: $body-s;
+      line-height: 10px;
+    }
+
+    &--md {
+      font-size: $body-s;
+      line-height: 12px;
+    }
+  }
+
+  &__help-text {
+    padding-top: $spacer-1;
+    color: $fiord;
+
+    &--sm {
+      font-size: $body-xs;
+      line-height: 8px;
+      margin-left: calc($smWidth/2);
+    }
+
+    &--md {
+      font-size: $body-xs;
+      line-height: 8px;
+      margin-left: calc($mdWidth/2);
+    }
+  }
+
+  // Disabled
+  &--disabled {
+    opacity: 0.5;
+  }
+
+}
+
+// Sizes
+.radio__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: $fiord;
+  
+  &--sm {
+    width: $smWidth;
+    height: $smWidth;
+    min-width: $smWidth;
+  }
+
+  &--md {
+    width: $mdWidth;
+    height: $mdWidth;
+    min-width: $mdWidth;
+  }
+}

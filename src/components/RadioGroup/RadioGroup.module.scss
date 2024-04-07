@@ -1,0 +1,17 @@
+@import "../../styles/utils/variables";
+
+
+.radio-group {
+    display: flex;
+    align-items: start;
+    
+    &__row {
+        flex-direction: row;
+        gap: $spacer-12;
+    }
+
+    &__column {
+        flex-direction: column;
+        gap: $spacer-4;
+    }
+}
