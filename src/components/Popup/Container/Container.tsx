@@ -42,7 +42,7 @@ const Container: FC<ContainerProps> = ({
   openPopupCb = () => {},
   className = "",
   closePopupCb = () => {},
-  isDraggable = true,
+  isDraggable = false,
   fixedCenter = false,
   size = "custom",
   closePopup,
